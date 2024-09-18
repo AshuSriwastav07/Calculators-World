@@ -10,6 +10,7 @@ function BasicCalc() {
     }
     setInputValue((prevValue) => prevValue + value);
   };
+  
 
   const handelClearButtonClick = () => {
     setInputValue("");
