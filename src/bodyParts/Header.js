@@ -7,13 +7,13 @@ import {
 
 
 
-function Header(){
+function Header(props){
   return (
     <>
       <nav className="navbar bg-purple-300 pl-5 pr-5">
         <div className="flex">
           <Link className="navbar-brand" to="/">
-            Calculator World
+            {props.title}
           </Link>
           <div className="content-center">
             <ul className="flex ">

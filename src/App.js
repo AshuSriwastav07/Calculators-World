@@ -7,16 +7,15 @@ import {
   BrowserRouter as Router,
   Routes,  // Use Routes instead of Switch
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Router>
-        <Header />
+        <Header title="Calculators World"/>
         <Routes>  {/* Replace Switch with Routes */}
-          <Route path="/BasicCalc" element={<BasicCalc />} />
+          <Route path="/BasicCalc" element={<BasicCalc/>} />
           <Route path="/dowryCalc" element={<DowryCalc />} />
           <Route path="/financeCalc" element={<FinanceCalc />} />
 
