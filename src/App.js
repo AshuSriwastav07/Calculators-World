@@ -12,6 +12,7 @@ import {
 function App() {
   return (
     <>
+      <div className="w-fit md:max-w-screen-md sm:max-w-screen-xl">
       <Router>
         <Header title="Calculators World"/>
         <Routes>  {/* Replace Switch with Routes */}
@@ -21,6 +22,7 @@ function App() {
 
         </Routes>
       </Router>
+      </div>
     </>
   );
 }

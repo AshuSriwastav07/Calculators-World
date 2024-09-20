@@ -10,12 +10,12 @@ import {
 function Header(props){
   return (
     <>
-      <nav className="navbar bg-purple-300 pl-5 pr-5">
-        <div className="flex">
+      <nav className="navbar bg-purple-300 pl-5 pr-5 w- sm:max-w-screen-2xl md:w-screen xl:w-screen 2xl:max-w-screen-2xl">
+        <div className="flex ">
           <Link className="navbar-brand" to="/">
             {props.title}
           </Link>
-          <div className="content-center">
+          <div className="content-center sm:justify-items-center">
             <ul className="flex ">
               <li className="nav-item">
                 <a
