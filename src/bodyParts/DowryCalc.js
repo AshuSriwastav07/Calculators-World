@@ -1,21 +1,22 @@
 import React from "react";
-
+import { useState } from "react";
 
 function DowryCalc() {
-
   function handleSubmit(e) {
-    e.preventDefault()
-    let {age,work,salary,education,house,country} = e.target.elements
-    age=parseInt(age.value);
-    work=parseInt(work.value);
-    salary=parseInt(salary.value);
-    education=parseInt(education.value);
-    house=parseInt(house.value);
-    country=parseInt(country.value);
+    e.preventDefault();
+    let { age, work, salary, education, house, country, showDowryAmount } =
+      e.target.elements;
+    age = parseInt(age.value);
+    work = parseInt(work.value);
+    salary = parseInt(salary.value);
+    education = parseInt(education.value);
+    house = parseInt(house.value);
+    country = parseInt(country.value);
 
-    console.log(age+work+salary+education+house+country);
-    
-}
+    setDowryAmount(age + work + salary + education + house + country);
+  }
+
+  const [dowryAmount, setDowryAmount] = useState(null);
 
   return (
     <div className="bg-[url('../public/bg.jpg')] bg-cover h-[90%] w-full p-5">
@@ -26,7 +27,7 @@ function DowryCalc() {
             How much dowry are you worth?
           </h1>
         </div>
-        <div className="dowryForm mx-3 w-full">
+        <div className="dowryForm mx-3">
           <form onSubmit={handleSubmit}>
             <div className="sec1 flex gap-10 justify-center">
               <div className="sec1-left">
@@ -34,9 +35,10 @@ function DowryCalc() {
                 <select
                   name="age"
                   id="age"
+                  required
                   className="px-2 w-32 my-3 border-2 border-solid border-indigo-500"
                 >
-                  <option value="0">select</option>
+                  <option value="">select</option>
                   <option value="100000">18-25</option>
                   <option value="80000">26-30</option>
                   <option value="50000">30-35</option>
@@ -50,9 +52,10 @@ function DowryCalc() {
                 <select
                   name="profession"
                   id="work"
+                  required
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
-                  <option value="0">Select</option>
+                  <option value="">Select</option>
                   <option value="200000">Doctor</option>
                   <option value="150000">Engineer</option>
                   <option value="125000">Software Developer</option>
@@ -71,9 +74,10 @@ function DowryCalc() {
                 <select
                   name="salary"
                   id="salary"
+                  required
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
-                  <option value="0">Select</option>
+                  <option value="">Select</option>
                   <option value="60000">Less Than 50000</option>
                   <option value="75000">50000-1Lakh</option>
                   <option value="100000">1-2 Lakh</option>
@@ -87,9 +91,10 @@ function DowryCalc() {
                 <select
                   name="education"
                   id="education"
+                  required
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
-                  <option value="0">Select</option>
+                  <option value="">Select</option>
                   <option value="25000">High School</option>
                   <option value="50000">Graduation</option>
                   <option value="60000">Post Graduation</option>
@@ -105,9 +110,10 @@ function DowryCalc() {
                 <select
                   name="house"
                   id="house"
+                  required
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
-                  <option value="0">Select</option>
+                  <option value="">Select</option>
                   <option value="50000">Self Owned</option>
                   <option value="30000">Rented</option>
                   <option value="10000">Parent's House</option>
@@ -119,9 +125,10 @@ function DowryCalc() {
                 <select
                   name="country"
                   id="country"
+                  required
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
-                  <option value="0">Select</option>
+                  <option value="">Select</option>
                   <option value="50000">India</option>
                   <option value="75000">USA</option>
                   <option value="60000">Abroad</option>
@@ -129,11 +136,22 @@ function DowryCalc() {
               </div>
             </div>
             <div className="submitButton flex justify-center">
-              <button type="submit" className="w-4/6 h-10 text-white rounded-lg bg-red-600 my-8 ">
+              <button
+                type="submit"
+                className="w-4/6 h-10 text-white rounded-lg bg-red-600 my-3 "
+              >
                 Submit
               </button>
             </div>
           </form>
+        </div>
+        <div>
+          {/* Conditionally render the result */}
+          {dowryAmount !== null && (
+            <h1 className="text-lg mx-3 my-2 pb-2 font-mono text-center">
+              Dowry Amount is: {dowryAmount}
+            </h1>
+          )}
         </div>
       </div>
     </div>
