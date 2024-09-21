@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
 import "../App.css";
 
 function BasicCalc() {
   const handelButtonClick = (value) => {
-    if (value == "00" || value == "0") {
+    if (value === "00" || value === "0") {
       if (
-        inputValue.at(-1) != "+" &&
-        inputValue.at(-1) != "-" &&
-        inputValue.at(-1) != "*" &&
-        inputValue.at(-1) != "/" &&
-        inputValue.at(-1) != "%" &&
-        inputValue != ""
+        inputValue.at(-1) !== "+" &&
+        inputValue.at(-1) !== "-" &&
+        inputValue.at(-1) !== "*" &&
+        inputValue.at(-1) !== "/" &&
+        inputValue.at(-1) !== "%" &&
+        inputValue !== ""
       ) {
         setInputValue((prevValue) => prevValue + value);
       }
@@ -36,20 +36,20 @@ function BasicCalc() {
   };
 
   const handelMultipleDecimal = (value) => {
-    if (inputValue.at(-1) != "" && !inputValue.includes(".")) {
+    if (inputValue.at(-1) !== "" && !inputValue.includes(".")) {
       setInputValue((prevValue) => prevValue + value);
     } else {
     }
   };
 
   const handelOperationClick = (value) => {
-    if (inputValue != "") {
+    if (inputValue !== "") {
       if (
-        inputValue.at(-1) != "+" &&
-        inputValue.at(-1) != "-" &&
-        inputValue.at(-1) != "*" &&
-        inputValue.at(-1) != "/" &&
-        inputValue.at(-1) != "%"
+        inputValue.at(-1) !== "+" &&
+        inputValue.at(-1) !== "-" &&
+        inputValue.at(-1) !== "*" &&
+        inputValue.at(-1) !== "/" &&
+        inputValue.at(-1) !== "%"
       ) {
         setInputValue((prevValue) => prevValue + value);
       }

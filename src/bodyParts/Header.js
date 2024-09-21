@@ -6,11 +6,12 @@ import {
 
 
 
-
 function Header(props){
+
+
   return (
     <>
-      <nav className="navbar bg-purple-300 pl-5 pr-5 w- sm:max-w-screen-2xl md:w-screen xl:w-screen 2xl:max-w-screen-2xl">
+      <nav className="navbar bg-purple-300 pl-5 pr-5 w-full ">
         <div className="flex ">
           <Link className="navbar-brand" to="/">
             {props.title}

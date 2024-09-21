@@ -1,23 +1,39 @@
 import React from "react";
 
+
 function DowryCalc() {
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    let {age,work,salary,education,house,country} = e.target.elements
+    age=parseInt(age.value);
+    work=parseInt(work.value);
+    salary=parseInt(salary.value);
+    education=parseInt(education.value);
+    house=parseInt(house.value);
+    country=parseInt(country.value);
+
+    console.log(age+work+salary+education+house+country);
+    
+}
+
   return (
-    <div>
-      <div className="mainBg bg-purple-400 mx-2 my-2 rounded">
+    <div className="bg-[url('../public/bg.jpg')] bg-cover h-[90%] w-full p-5">
+      <div className="mainBg bg-purple-400 rounded max-w-sm ">
         <div className="headings flex flex-col text-center">
           <h1 className="text-lg mx-3 my-2 font-serif">Dowry Calculator</h1>
           <h1 className="text-lg mx-3 my-2 font-serif">
             How much dowry are you worth?
           </h1>
         </div>
-        <div className="dowryForm mx-3">
-          <form action="">
+        <div className="dowryForm mx-3 w-full">
+          <form onSubmit={handleSubmit}>
             <div className="sec1 flex gap-10 justify-center">
               <div className="sec1-left">
                 <h1 className="text-[18px]">Age</h1>
                 <select
                   name="age"
-                  id=""
+                  id="age"
                   className="px-2 w-32 my-3 border-2 border-solid border-indigo-500"
                 >
                   <option value="0">select</option>
@@ -33,7 +49,7 @@ function DowryCalc() {
                 <h1 className="text-[18px]">Profession</h1>
                 <select
                   name="profession"
-                  id=""
+                  id="work"
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
                   <option value="0">Select</option>
@@ -54,12 +70,12 @@ function DowryCalc() {
                 <h1 className="text-[18px]">Monthly Salary</h1>
                 <select
                   name="salary"
-                  id=""
+                  id="salary"
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
                   <option value="0">Select</option>
                   <option value="60000">Less Than 50000</option>
-                  <option value="750000">50000-1Lakh</option>
+                  <option value="75000">50000-1Lakh</option>
                   <option value="100000">1-2 Lakh</option>
                   <option value="125000">2-5 Lakh</option>
                   <option value="150000">More than 5 Lakh</option>
@@ -70,7 +86,7 @@ function DowryCalc() {
                 <h1 className="text-[18px]">Education</h1>
                 <select
                   name="education"
-                  id=""
+                  id="education"
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
                   <option value="0">Select</option>
@@ -88,7 +104,7 @@ function DowryCalc() {
                 <h1 className="text-[18px]">Residence</h1>
                 <select
                   name="house"
-                  id=""
+                  id="house"
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
                   <option value="0">Select</option>
@@ -102,7 +118,7 @@ function DowryCalc() {
                 <h1 className="text-[18px]">Country</h1>
                 <select
                   name="country"
-                  id=""
+                  id="country"
                   className="px-2 w-32 my-3 border-2	border-solid border-indigo-500"
                 >
                   <option value="0">Select</option>
@@ -113,7 +129,7 @@ function DowryCalc() {
               </div>
             </div>
             <div className="submitButton flex justify-center">
-              <button type="submit" className="w-2/6 bg-red-600 ">
+              <button type="submit" className="w-4/6 h-10 text-white rounded-lg bg-red-600 my-8 ">
                 Submit
               </button>
             </div>
