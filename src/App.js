@@ -12,7 +12,7 @@ import {
 function App() {
   return (
     <>
-      <div className="w-screen h-screen min-w-max min-h-full">
+      <div className="h-screen min-w-max min-h-full">
         <Router>
           <Header title="Calculators World" />
           <Routes>

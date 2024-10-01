@@ -4,7 +4,7 @@ import { useState } from "react";
 function DowryCalc() {
   function handleSubmit(e) {
     e.preventDefault();
-    let { age, work, salary, education, house, country, showDowryAmount } =
+    let { age, work, salary, education, house, country } =
       e.target.elements;
     age = parseInt(age.value);
     work = parseInt(work.value);
@@ -19,7 +19,7 @@ function DowryCalc() {
   const [dowryAmount, setDowryAmount] = useState(null);
 
   return (
-    <div className="bg-[url('../public/bg.jpg')] bg-cover h-[90%] w-full p-5">
+    <div className="bg-[url('../public/bg.jpg')] bg-cover h-full w-[100%] max-w-full p-5">
       <div className="mainBg bg-purple-400 rounded max-w-sm ">
         <div className="headings flex flex-col text-center">
           <h1 className="text-lg mx-3 my-2 font-serif">Dowry Calculator</h1>
